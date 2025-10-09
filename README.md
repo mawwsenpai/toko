@@ -1,55 +1,87 @@
-# TOKO ONLINE 
+<p align="center">
+  <img src="https://placehold.co/800x250/0d1117/79c0ff?text=VocherGames&fontsize=120" alt="VocherGames Banner"/>
+</p>
 
-🎮 VocherGames - Toko Top-Up Game Otomatis (MawwSenpai_ Project)
-!(https://placehold.co/1000x200/000a1a/0099ff?text=VOCHER+GAMES+%7C+Automatic+Gaming+Top-Up+Solution)
+<h1 align="center">🎮 VocherGames Project</h1>
 
-Sebuah proyek e-commerce mandiri yang dibangun untuk mengotomatisasi penjualan produk digital game. Proyek ini didasarkan pada konsep "Uang Pembeli Sebagai Modal" dan memanfaatkan hosting gratis (GitHub Pages).
+<p align="center">
+  Sebuah ekosistem E-Commerce mandiri untuk produk digital game, <br>
+  dirancang untuk berjalan <strong>sepenuhnya otomatis</strong> dengan <strong>biaya nol</strong>.
+</p>
 
-✨ Fitur Kunci & Aesthetic UI
-Tema Kustom Dinamis: Menggunakan CSS Variables untuk 20+ tema aesthetic (Neon, Cyberpunk, dll.) yang dapat diganti real-time dari halaman setting.html.
+<p align="center">
+  <img src="https://img.shields.io/badge/Status-Aktif-brightgreen?style=flat-square" alt="Status">
+  <img src="https://img.shields.io/badge/Lisensi-MIT-blue?style=flat-square" alt="License">
+  <img src="https://img.shields.io/badge/Versi-1.0-informational?style=flat-square" alt="Version">
+</p>
 
-Font Global & UI: Kontrol penuh atas Jenis Font (200+ Pilihan) dan Ukuran Teks Global melalui slider yang akurat.
+<p align="center">
+  · · ·
+</p>
 
-Order Otomatis: Integrasi dengan Backend (Heroku/GCP) untuk memproses pembayaran dan pengiriman produk 24/7.
+## **Filosofi Proyek**
 
-Formulir Stabil: Form pemesanan (order.html) bersifat dinamis, hanya menampilkan input yang diperlukan (ID Zone) sesuai dengan game.
+> Proyek ini lahir dari ide sederhana: **"Uang Pembeli Sebagai Modal."** Sistem ini tidak memerlukan stok produk atau modal operasional yang besar. Semuanya diproses secara *real-time*, menjadikan bisnis digital lebih aksesibel bagi siapa saja.
 
-🛠️ Tumpukan Teknologi (The Stack)
-Proyek ini dirancang dengan fokus pada biaya rendah dan otomatisasi penuh.
+<br>
 
-Komponen	Teknologi	Tujuan
-Frontend (Tampilan)	HTML5, CSS Variables	Hosting Gratis di GitHub Pages (Estetika UI).
-Backend (Server)	Node.js (Express/Koa)	Dihosting di Heroku (Paket Gratis) atau Google Cloud Run.
-Pembayaran/API	Duitku / Midtrans	Memproses transaksi dan mengirim product.
-🚀 Panduan Instalasi & Deployment
-Untuk menjalankan shop ini, kamu perlu menyatukan Frontend dan Backend melalui kunci API.
+## **Fitur Unggulan**
 
-1. Kunci API & Setup Backend
-Dapatkan Kunci: Daftar ke Duitku atau Payment Gateway lain untuk mendapatkan Merchant Code dan API Key.
+| Ikon | Fitur                  | Deskripsi Singkat                                                                                             |
+| :--: | ---------------------- | ------------------------------------------------------------------------------------------------------------- |
+|  🎨  | **UI Adaptif & Estetik** | Ganti tema dan font secara instan. Dengan 20+ tema (Neon, Cyberpunk) dan 200+ font, UI bisa disesuaikan sesuka hati. |
+|  ⚡  | **Otomatisasi Penuh 24/7** | Dari pembayaran hingga pengiriman produk, semua berjalan otomatis. Biarkan kode yang bekerja untukmu.       |
+|  🧠  | **Formulir Cerdas** | Formulir pemesanan yang dinamis hanya menampilkan input yang dibutuhkan (seperti ID/Zone), menciptakan UX yang mulus.   |
 
-Siapkan Server: Deploy kode Node.js backend kamu ke Heroku.
+<br>
 
-Config Vars: Simpan kunci rahasiamu (DUITKU_API_KEY, dll.) di Config Vars Heroku (JANGAN di kode!).
+## **Arsitektur Teknologi**
 
-2. Deployment Frontend (GitHub Pages)
-Clone Repositori: Dapatkan semua file proyekmu dari GitHub.
+<table align="center" width="100%">
+  <tr align="center">
+    <td>
+      <h3>Frontend</h3>
+      <p>HTML5, CSS Variables, dan Vanilla JavaScript untuk UI yang ringan, cepat, dan sangat mudah dikustomisasi. Dihosting di <strong>GitHub Pages</strong>.</p>
+    </td>
+    <td>
+      <h3>Backend</h3>
+      <p>Ditenagai oleh <strong>Node.js (Express/Koa)</strong> untuk menangani logika bisnis dan API. Dijalankan secara efisien di <strong>Heroku</strong> atau <strong>Google Cloud Run</strong>.</p>
+    </td>
+    <td>
+      <h3>Integrasi</h3>
+      <p>Menggunakan payment gateway seperti <strong>Duitku</strong> atau <strong>Midtrans</strong> untuk memproses transaksi dengan aman dan otomatis.</p>
+    </td>
+  </tr>
+</table>
 
-Hubungkan Script: Pastikan URL Backend Heroku-mu sudah diperbarui di file js/pay.js.
+<p align="center">
+  · · ·
+</p>
 
-Aktifkan Pages: Unggah ke GitHub dan aktifkan GitHub Pages dari pengaturan repositori.
+## **Panduan Peluncuran Cepat**
 
-📂 Struktur Proyek
-/VocherGames/
-├── main.html                 # Halaman utama (Pilihan Game)
-├── order.html                # Formulir Pemesanan (Dinamis)
-├── setting.html              # Pengaturan Tema & Font
-├── style.css                 # Styling Utama (Layout)
-├── theme.css                 # Variabel CSS KHUSUS (Warna & Tema)
-└── /js/
-    ├── theme-loader.js       # Script Kritis untuk Stabilitas Tema
-    ├── order.js              # Logic Validasi & Komunikasi
-    └── pay.js                # Jembatan API ke Backend Heroku
-🤝 Kontribusi
-Jika kamu ingin berkontribusi pada fitur baru atau perbaikan, silakan buat Pull Request (PR)!
+Siapkan tokomu dalam dua langkah utama.
 
-Dibuat dengan semangat open source oleh MawwSenpai_
+### **1. Konfigurasi Sisi Server (Backend)**
+* **Dapatkan Kunci API**: Daftar di payment gateway pilihanmu (misal: Duitku) untuk mendapatkan `Merchant Code` & `API Key`.
+* **Deploy Server**: Unggah kode backend ke Heroku.
+* **Simpan Kunci dengan Aman**: Masukkan `API Key` dan kredensial lainnya ke dalam **Config Vars** di pengaturan Heroku. ⚠️ **Jangan pernah taruh kunci rahasia di dalam kode!**
+
+### **2. Publikasi Sisi Klien (Frontend)**
+* **Clone Repositori**: Ambil semua file frontend dari repositori Git.
+* **Hubungkan ke Server**: Edit file `js/pay.js` dan arahkan URL API ke alamat aplikasi Heroku-mu.
+* **Go Live**: Unggah semua file ke repositori GitHub dan aktifkan **GitHub Pages**. Tokomu kini online!
+
+<br>
+
+## **Mari Berkontribusi**
+
+Proyek ini bersifat *open source*. Jika kamu punya ide untuk membuatnya lebih baik, silakan buka **Issue** untuk berdiskusi atau kirimkan **Pull Request** dengan perbaikanmu. Setiap kontribusi sangat berarti.
+
+<p align="center">
+  · · ·
+</p>
+
+<p align="center">
+  Dibuat dengan semangat oleh <strong>MawwSenpai_</strong>
+</p>
