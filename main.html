@@ -3,11 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VocherGames - Top Up Termurah</title>
-    <script src="js/theme-loader.js"></script> 
-    <link rel="stylesheet" href="style.css">
+    <title>VocherGames - Top Up Cepat & Terpercaya</title>
+    <script src="js/app-settings.js"></script> 
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/theme.css">
+    <link rel="stylesheet" href="css/animation.css">
 </head>
 <body>
     
@@ -16,16 +20,14 @@
     <div class="app-layout">
         
         <aside class="app-sidebar" id="app-sidebar">
-            <div class="sidebar-header">
-                <h2 class="sidebar-title">VocherGames</h2>
-            </div>
+            <div class="sidebar-header"><h2 class="sidebar-title">VocherGames</h2></div>
             <div class="sidebar-nav">
                 <div class="control-group">
                     <div class="control-group-title">Navigasi Utama</div>
                     <ul class="nav-list">
                         <li><a href="main.html" class="nav-link active"><i class="fas fa-home"></i> Beranda</a></li>
-                        <li><a href="status.html" class="nav-link"><i class="fas fa-clock"></i> Cek Status Order</a></li>
-                        <li><a href="setting.html" class="nav-link"><i class="fas fa-cog"></i> Pengaturan Tampilan</a></li>
+                        <li><a href="status.html" class="nav-link"><i class="fas fa-receipt"></i> Cek Status Order</a></li>
+                        <li><a href="setting.html" class="nav-link"><i class="fas fa-cog"></i> Pengaturan</a></li>
                     </ul>
                 </div>
             </div>
@@ -37,28 +39,52 @@
             <header class="main-header">
                 <button class="mobile-menu-toggle" id="menu-toggle"><i class="fas fa-bars"></i></button>
                 <div class="logo-title">VocherGames</div>
-                <div><i class="fas fa-user-circle" style="color:var(--text-secondary);"></i></div>
+                <div><i class="fas fa-user-circle" style="font-size: 1.5rem;"></i></div>
             </header>
 
             <main>
+                <section class="hero-banner">
+                    <div class="banner-overlay"></div>
+                    <div class="banner-content">
+                        <h1>Transaksi Cepat, Aman, Terpercaya</h1>
+                        <p>Pilih dari ratusan produk digital favoritmu.</p>
+                    </div>
+                </section>
+                
                 <div class="container">
-                    <section class="game-selection">
-                        <h2>Pilih Game Favoritmu</h2>
-                        <div class="game-grid" id="game-grid">
-                            </div>
-                    </section>
+                    <nav class="category-nav">
+                        <button class="category-button active" data-category="topup-game">
+                            <i class="fas fa-gamepad"></i> Top Up Game
+                        </button>
+                        <button class="category-button" data-category="pulsa-data">
+                            <i class="fas fa-mobile-alt"></i> Pulsa & Data
+                        </button>
+                        <button class="category-button" data-category="e-wallet">
+                            <i class="fas fa-wallet"></i> E-Wallet
+                        </button>
+                    </nav>
+
+                    <div id="content-container">
+                        <section id="topup-game-content" class="content-grid active">
+                            </section>
+                        <section id="pulsa-data-content" class="content-grid">
+                            </section>
+                         <section id="e-wallet-content" class="content-grid">
+                            </section>
+                    </div>
                 </div>
             </main>
 
             <footer>
                 <div class="container">
-                    <p>&copy; 2025 VocherGames. Ditenagai oleh Heroku & Duitku.</p>
+                    <p>&copy; 2025 VocherGames.</p>
                 </div>
             </footer>
         </div>
     </div>
 
     <script>
+        // Script sidebar toggle tetap sama
         document.getElementById('menu-toggle').addEventListener('click', () => {
             document.getElementById('app-sidebar').classList.toggle('is-open');
             document.body.classList.toggle('sidebar-open');
@@ -68,6 +94,7 @@
             document.body.classList.remove('sidebar-open');
         });
     </script>
+    <script src="js/api.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>

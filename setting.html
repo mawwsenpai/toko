@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pengaturan Tampilan - VocherGames</title>
-    <script src="js/theme-loader.js"></script> 
+    <script src="js/app-settings.js"></script> 
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
@@ -24,37 +24,61 @@
                 
                 <section class="setting-group" id="theme-settings">
                     <h2><i class="fas fa-palette"></i> Tema Warna</h2>
-                    <p class="setting-desc">Ganti skema warna utama (mode terang/gelap, cyberpunk, dll.).</p>
+                    <p class="setting-desc">Pilih skema warna favoritmu.</p>
                     <div class="options-container scrollable" data-setting-name="theme">
-                        </div>
+                        <label><input type="radio" name="theme" value="neon-biru"> Neon Biru</label>
+                        <label><input type="radio" name="theme" value="neon-merah"> Neon Merah</label>
+                        <label><input type="radio" name="theme" value="neon-ungu"> Neon Ungu</label>
+                        <label><input type="radio" name="theme" value="neon-putih"> Neon Putih</label>
+                        <label><input type="radio" name="theme" value="neon-google"> Neon Google</label>
+                        <label><input type="radio" name="theme" value="cyberpunk"> Cyberpunk</label>
+                        <label><input type="radio" name="theme" value="matrix"> Matrix</label>
+                        <label><input type="radio" name="theme" value="malam-kota"> Malam Kota</label>
+                        <label><input type="radio" name="theme" value="gelap"> Gelap</label>
+                        <label><input type="radio" name="theme" value="karbon"> Karbon</label>
+                        <label><input type="radio" name="theme" value="laut-dalam"> Laut Dalam</label>
+                        <label><input type="radio" name="theme" value="google-pixel"> Google Pixel</label>
+                        <label><input type="radio" name="theme" value="kertas"> Kertas</label>
+                        <label><input type="radio" name="theme" value="buku"> Buku</label>
+                        <label><input type="radio" name="theme" value="buku-klasik"> Buku Klasik</label>
+                        <label><input type="radio" name="theme" value="novel"> Novel</label>
+                        <label><input type="radio" name="theme" value="coklat"> Coklat</label>
+                        <label><input type="radio" name="theme" value="retro"> Retro</label>
+                        <label><input type="radio" name="theme" value="senja"> Senja</label>
+                        <label><input type="radio" name="theme" value="langit"> Langit</label>
+                        <label><input type="radio" name="theme" value="air"> Air</label>
+                        <label><input type="radio" name="theme" value="hutan-senyap"> Hutan Senyap</label>
+                    </div>
                 </section>
 
                 <section class="setting-group" id="font-family-settings">
                     <h2><i class="fas fa-font"></i> Jenis Font</h2>
                     <p class="setting-desc">Pilih jenis font untuk seluruh aplikasi.</p>
-                    
-                    <div class="options-container scrollable" data-setting-name="font-family">
-                        </div>
+                    <div class="options-container" data-setting-name="font-family">
+                        <label><input type="radio" name="font-family" value="poppins" data-css="'Poppins', sans-serif"> Poppins</label>
+                        <label><input type="radio" name="font-family" value="roboto" data-css="'Roboto', sans-serif"> Roboto</label>
+                        <label><input type="radio" name="font-family" value="opensans" data-css="'Open Sans', sans-serif"> Open Sans</label>
+                        <label><input type="radio" name="font-family" value="oswald" data-css="'Oswald', sans-serif'"> Oswald</label>
+                    </div>
                 </section>
                 
+                <section class="setting-group" id="animation-settings">
+                    <h2><i class="fas fa-magic"></i> Animasi Latar</h2>
+                    <p class="setting-desc">Pilih efek visual latar belakang.</p>
+                    <div class="options-container" data-setting-name="animation">
+                        <label><input type="radio" name="animation" value="none"> Tidak Ada</label>
+                        <label><input type="radio" name="animation" value="subtle-gradient"> Gradien Halus</label>
+                    </div>
+                </section>
                 <section class="setting-group" id="font-size-settings">
                     <h2><i class="fas fa-text-height"></i> Ukuran Teks Global</h2>
-                    <p class="setting-desc">Geser untuk mengubah ukuran teks keseluruhan.</p>
-                    
+                    <p class="setting-desc">Geser untuk mengubah ukuran teks di seluruh aplikasi.</p>
                     <div class="control-group">
-                        <input type="range" id="text-size-range" min="0" max="8" step="1" value="3" class="styled-range-input">
-                        
+                        <input type="range" id="text-size-range" min="0" max="4" step="1" value="1" class="styled-range-input">
                         <label for="text-size-range" style="color: var(--accent-color); display: block; text-align: center; margin-top: 10px;">
                             Ukuran Aktif: <span id="current-size-name" style="font-weight: 600;">Default (1.0x)</span>
                         </label>
                     </div>
-                </section>
-
-                <section class="setting-group" id="animation-settings">
-                    <h2><i class="fas fa-magic"></i> Animasi Latar Belakang</h2>
-                    <p class="setting-desc">Pilih efek visual latar belakang.</p>
-                    <div class="options-container" data-setting-name="animation">
-                        </div>
                 </section>
                 
             </main>
@@ -64,7 +88,5 @@
             </footer>
         </div>
     </div>
-
-    <script src="js/setting.js"></script>
-</body>
+    </body>
 </html>
