@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beli Diamond - VocherGames</title>
+    <script src="js/theme-loader.js"></script> 
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+    <div id="animated-bg" data-animation="none"></div>
+
+    <div class="app-layout">
+        <div class="main-content-wrapper">
+            <header class="main-header">
+                <a href="main.html" class="back-button"><i class="fas fa-arrow-left"></i></a>
+                <div class="logo-title">Pembelian</div>
+                <div></div>
+            </header>
+
+            <main>
+                <div class="container">
+                    <div class="order-card">
+                        <section class="order-header">
+                            <img id="game-image" src="" alt="Gambar Game">
+                            <h2 id="game-title"></h2>
+                            <p id="game-description"></p>
+                        </section>
+                        
+                        <form id="top-up-form">
+                            <section class="step-section">
+                                <h3>1. Pilih Jumlah Diamond</h3>
+                                <div class="product-grid" id="product-grid">
+                                    </div>
+                            </section>
+
+                            <section class="step-section">
+                                <h3>2. Masukkan ID Akun</h3>
+                                <label for="game-id">ID Game:</label>
+                                <input type="text" id="game-id" name="gameId" placeholder="Contoh: 12345678" required>
+
+                                <div id="zone-input-group" style="display: none;"> 
+                                    <label for="zone-id">ID Zone:</label>
+                                    <input type="text" id="zone-id" name="zoneId" placeholder="Contoh: 1234">
+                                </div>
+                            </section>
+                            
+                            <section class="step-section">
+                                <h3>3. Pilih Metode Pembayaran</h3>
+                                <div class="payment-grid" id="payment-grid">
+                                    </div>
+                            </section>
+
+                            <div class="final-buy">
+                                <div class="total-price" id="total-price">Total: Rp 0</div>
+                                <button type="submit" id="submit-button">Beli Sekarang</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </main>
+            
+            <section class="status-section">
+                <div id="status-message" style="display: none;"></div>
+            </section>
+
+            <footer>
+                <div class="container">
+                    <p>&copy; 2025 VocherGames. Ditenagai oleh Heroku & Duitku.</p>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <script src="js/order.js"></script>
+    <script src="js/pay.js"></script>
+</body>
+</html>

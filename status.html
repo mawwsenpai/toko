@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cek Status Order - VocherGames</title>
+    <script src="js/theme-loader.js"></script> 
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    
+    <div id="animated-bg" data-animation="none"></div>
+
+    <div class="app-layout">
+        <div class="main-content-wrapper">
+            <header class="main-header">
+                <a href="main.html" class="back-button"><i class="fas fa-arrow-left"></i></a>
+                <div class="logo-title">Cek Status Order</div>
+                <div></div>
+            </header>
+
+            <main>
+                <div class="container">
+                    <div class="order-card">
+                        <section class="form-section">
+                            <h2>Lacak Pesanan Anda</h2>
+                            <p class="setting-desc">Masukkan ID Transaksi unik yang Anda dapatkan setelah pembayaran.</p>
+                            <form id="status-form">
+                              <label for="search-input">ID Transaksi / Nama Pembeli:</label>
+                              <input type="text" id="search-input" placeholder="Masukkan ID Transaksi atau Username Anda" required>
+                              <button type="submit" id="check-button">Cek Status</button>
+                              </form>
+                        </section>
+
+                        <section class="result-section" id="result-section" style="display:none;">
+                            <h3>Detail Transaksi</h3>
+                            <div id="status-details">
+                                </div>
+                        </section>
+                        
+                        <section class="status-section">
+                            <div id="info-message" style="display:none;"></div>
+                        </section>
+                    </div>
+                </div>
+            </main>
+
+            <footer>
+                <div class="container">
+                    <p>&copy; 2025 VocherGames. All Rights Reserved.</p>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <script src="js/status.js"></script>
+    </body>
+</html>

@@ -1,0 +1,257 @@
+/* ========================================================================= */
+/* --- VocherGames THEME VARIABLES & ANIMATIONS --- */
+/* (Semua kode di sini akan diimpor oleh style.css) */
+/* ========================================================================= */
+
+:root {
+    /* --- Layout & Sizing (General) --- */
+    --sidebar-width: 280px;
+    --header-height: 64px;
+    --editor-footer-height: 60px;
+    --border-radius-sm: 8px;
+    --border-radius-md: 12px;
+    --border-radius-lg: 20px;
+    --padding-xs: .5rem;
+    --padding-sm: 1rem;
+    --padding-md: 1.5rem;
+    --padding-lg: 2rem;
+    
+    /* --- Typography --- */
+    --font-main: 'Poppins', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+    --font-size-base: 1rem;
+    --font-size-editor: 1rem;
+    
+    /* --- Transitions & Z-Index --- */
+    --transition-fast: all .2s ease-in-out;
+    --transition-smooth: all .3s cubic-bezier(.25, .8, .25, 1);
+    --z-bg-animation: -1;
+    --z-content: 100; /* Ditinggikan untuk header/konten */
+    --z-overlay: 599;
+    --z-sidebar: 600;
+    --z-editor-footer: 100;
+    --z-modal: 9000;
+    --z-modal-confirm: 9001;
+    --z-notification: 9990;
+    --z-loading: 9999;
+    
+    /* --- DEFAULT THEME: MODERN DARK (Cyber-Gold) --- */
+    --global-opacity: 0.85;
+    --bg-primary: #0c1012;
+    --bg-primary-rgb: 12, 16, 18;
+    --bg-secondary-rgb: 26, 32, 38;
+    --text-primary: #e2e8f0;
+    --text-secondary: #94a3b8;
+    --border-color: #2d3748;
+    --accent-color: #d5c192;
+    --accent-color-rgb: 213, 193, 146;
+    --accent-text: #1a202c;
+    --danger-color: #ef4444;
+    --danger-color-rgb: 239, 68, 68;
+    --border-style: 1px solid var(--border-color);
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.2);
+    --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.3);
+    --accent-glow: 0 0 20px rgba(var(--accent-color-rgb), .4);
+    --border-glow: 0 0 5px var(--accent-color), 0 0 10px var(--accent-color);
+}
+
+/* ------------------------------------------------------------------------- */
+/* --- 1. THEME VARIATIONS --- */
+/* ------------------------------------------------------------------------- */
+
+body[data-theme="air"] {
+    --bg-primary: #e0f2f7; --bg-primary-rgb: 224, 242, 247; --bg-secondary-rgb: 224, 242, 247;
+    --text-primary: #0d47a1; --text-secondary: #42a5f5; --border-color: #90caf9;
+    --accent-color: #29b6f6; --accent-color-rgb: 41, 182, 246; --accent-text: #0d47a1;
+    --danger-color: #ef5350; --danger-color-rgb: 239, 83, 80; --global-opacity: 0.95;
+}
+
+body[data-theme="buku"] {
+    --bg-primary: #f8f8f0; --bg-primary-rgb: 248, 248, 240; --bg-secondary-rgb: 240, 240, 232;
+    --text-primary: #4a4a4a; --text-secondary: #7e57c2; --border-color: #d1c4e9;
+    --accent-color: #b39ddb; --accent-color-rgb: 179, 157, 219; --accent-text: #4a4a4a;
+    --danger-color: #ef5350; --danger-color-rgb: 239, 83, 80; --global-opacity: 0.9;
+}
+
+body[data-theme="gelap"] {
+    --bg-primary: #212121; --bg-primary-rgb: 33, 33, 33; --bg-secondary-rgb: 33, 33, 33;
+    --text-primary: #e0e0e0; --text-secondary: #9e9e9e; --border-color: #616161;
+    --accent-color: #7986cb; --accent-color-rgb: 121, 134, 203; --accent-text: #212121;
+    --danger-color: #ff8a65; --danger-color-rgb: 255, 138, 101; --global-opacity: 0.9;
+}
+
+body[data-theme="coklat"] {
+    --bg-primary: #efebe9; --bg-primary-rgb: 239, 235, 233; --bg-secondary-rgb: 239, 235, 233;
+    --text-primary: #4e342e; --text-secondary: #8d6e63; --border-color: #bcaaa4;
+    --accent-color: #795548; --accent-color-rgb: 121, 85, 72; --accent-text: #efebe9;
+    --danger-color: #d84315; --danger-color-rgb: 216, 67, 21; --global-opacity: 0.95;
+}
+
+body[data-theme="google-pixel"] {
+    --bg-primary: #fcfcfc; --bg-primary-rgb: 252, 252, 252; --bg-secondary-rgb: 240, 240, 240;
+    --text-primary: #202124; --text-secondary: #5f6368; --border-color: #dadce0;
+    --accent-color: #4285f4; --accent-color-rgb: 66, 133, 244; --accent-text: #ffffff;
+    --danger-color: #ea4335; --danger-color-rgb: 234, 67, 53; --global-opacity: 0.95;
+}
+
+body[data-theme="matrix"] {
+    --bg-primary: #0a0a0a; --bg-primary-rgb: 10, 10, 10; --bg-secondary-rgb: 10, 20, 10;
+    --text-primary: #00ff41; --text-secondary: #00b330; --border-color: #004d1a;
+    --accent-color: #00ff41; --accent-color-rgb: 0, 255, 65; --accent-text: #0a0a0a;
+    --danger-color: #ff0000; --danger-color-rgb: 255, 0, 0; --global-opacity: 0.7;
+}
+
+body[data-theme="senja"] {
+    --bg-primary: #1e1e2f; --bg-primary-rgb: 30, 30, 47; --bg-secondary-rgb: 30, 30, 47;
+    --text-primary: #f0f0f0; --text-secondary: #b0b0d0; --border-color: #6a6a8a;
+    --accent-color: #ff8c42; --accent-color-rgb: 255, 140, 66; --accent-text: #1e1e2f;
+    --danger-color: #ff6347; --danger-color-rgb: 255, 99, 71; --global-opacity: 0.8;
+}
+
+body[data-theme="cyberpunk"] {
+    --bg-primary: #08081a; --bg-primary-rgb: 8, 8, 26; --bg-secondary-rgb: 15, 15, 30;
+    --text-primary: #00ffff; --text-secondary: #ff00ff; --border-color: #ff00ff;
+    --accent-color: #ffea00; --accent-color-rgb: 255, 234, 0; --accent-text: #08081a;
+    --danger-color: #ff3366; --danger-color-rgb: 255, 51, 102; --global-opacity: 0.75;
+}
+
+body[data-theme="laut-dalam"] {
+    --bg-primary: #001f3f; --bg-primary-rgb: 0, 31, 63; --bg-secondary-rgb: 0, 31, 63;
+    --text-primary: #e0f2f7; --text-secondary: #a7d9f7; --border-color: #0077b6;
+    --accent-color: #00bfff; --accent-color-rgb: 0, 191, 255; --accent-text: #001f3f;
+    --danger-color: #ff6b6b; --danger-color-rgb: 255, 107, 107; --global-opacity: 0.85;
+}
+
+body[data-theme="retro"] {
+    --bg-primary: #f0f0c0; --bg-primary-rgb: 240, 240, 192; --bg-secondary-rgb: 240, 240, 192;
+    --text-primary: #4a4a3a; --text-secondary: #8d6e63; --border-color: #c0c090;
+    --accent-color: #a0522d; --accent-color-rgb: 160, 82, 45; --accent-text: #f0f0c0;
+    --danger-color: #d32f2f; --danger-color-rgb: 211, 47, 47; --global-opacity: 0.9;
+}
+
+body[data-theme="neon-merah"] {
+    --bg-primary: #140000; --bg-primary-rgb: 20, 0, 0; --bg-secondary-rgb: 38, 0, 0;
+    --text-primary: #ff6b6b; --text-secondary: #ffb3b3; --border-color: #8c0000;
+    --accent-color: #ff3333; --accent-color-rgb: 255, 51, 51; --accent-text: #140000;
+    --danger-color: #ff8c8c; --danger-color-rgb: 255, 140, 140; --global-opacity: 0.8;
+}
+
+body[data-theme="neon-putih"] {
+    --bg-primary: #1c1c1c; --bg-primary-rgb: 28, 28, 28; --bg-secondary-rgb: 38, 38, 38;
+    --text-primary: #ffffff; --text-secondary: #cccccc; --border-color: #666666;
+    --accent-color: #e0e0e0; --accent-color-rgb: 224, 224, 224; --accent-text: #1c1c1c;
+    --danger-color: #ff8080; --danger-color-rgb: 255, 128, 128; --global-opacity: 0.85;
+}
+
+body[data-theme="neon-biru"] {
+    --bg-primary: #000a1a; --bg-primary-rgb: 0, 10, 26; --bg-secondary-rgb: 0, 26, 51;
+    --text-primary: #80c8ff; --text-secondary: #b3e0ff; --border-color: #004d99;
+    --accent-color: #0099ff; --accent-color-rgb: 0, 153, 255; --accent-text: #000a1a;
+    --danger-color: #ff8080; --danger-color-rgb: 255, 128, 128; --global-opacity: 0.8;
+}
+
+body[data-theme="neon-ungu"] {
+    --bg-primary: #1a002a; --bg-primary-rgb: 26, 0, 42; --bg-secondary-rgb: 38, 0, 51;
+    --text-primary: #d99bff; --text-secondary: #e6ccff; --border-color: #660080;
+    --accent-color: #cc00ff; --accent-color-rgb: 204, 0, 255; --accent-text: #1a002a;
+    --danger-color: #ff9999; --danger-color-rgb: 255, 153, 153; --global-opacity: 0.8;
+}
+
+body[data-theme="neon-google"] {
+    --bg-primary: #181818; --bg-primary-rgb: 24, 24, 24; --bg-secondary-rgb: 35, 35, 35;
+    --text-primary: #e8eaed; --text-secondary: #9aa0a6; --border-color: #5f6368;
+    --accent-color: #8ab4f8; --accent-color-rgb: 138, 180, 248; --accent-text: #181818;
+    --danger-color: #f28b82; --danger-color-rgb: 242, 139, 130; --global-opacity: 0.9;
+}
+
+body[data-theme="buku-klasik"] {
+    --bg-primary: #fbf8ed; --bg-primary-rgb: 251, 248, 237; --bg-secondary-rgb: 251, 248, 237;
+    --text-primary: #5c4033; --text-secondary: #8b6e63; --border-color: #eee8d5;
+    --accent-color: #8b0000; --accent-color-rgb: 139, 0, 0; --accent-text: #fbf8ed;
+    --danger-color: #dc322f; --danger-color-rgb: 220, 50, 47; --global-opacity: 0.95;
+}
+
+body[data-theme="novel"] {
+    --bg-primary: #fdfdf5; --bg-primary-rgb: 253, 253, 245; --bg-secondary-rgb: 245, 245, 235;
+    --text-primary: #3a3a3a; --text-secondary: #7a7a7a; --border-color: #d1d1c6;
+    --accent-color: #268bd2; --accent-color-rgb: 38, 139, 210; --accent-text: #fdfdf5;
+    --danger-color: #cb4b16; --danger-color-rgb: 203, 75, 22; --global-opacity: 0.9;
+}
+
+body[data-theme="kertas"] {
+    --bg-primary: #ffffff; --bg-primary-rgb: 255, 255, 255; --bg-secondary-rgb: 245, 245, 245;
+    --text-primary: #1c1c1c; --text-secondary: #666666; --border-color: #e0e0e0;
+    --accent-color: #4a4a4a; --accent-color-rgb: 74, 74, 74; --accent-text: #ffffff;
+    --danger-color: #d93025; --danger-color-rgb: 217, 48, 37; --global-opacity: 0.8;
+}
+
+body[data-theme="karbon"] {
+    --bg-primary: #1a1a20; --bg-primary-rgb: 26, 26, 32; --bg-secondary-rgb: 30, 30, 38;
+    --text-primary: #dcdcdc; --text-secondary: #a0a0a0; --border-color: #333333;
+    --accent-color: #ff8c00; --accent-color-rgb: 255, 140, 0; --accent-text: #1a1a20;
+    --danger-color: #ff5555; --danger-color-rgb: 255, 85, 85; --global-opacity: 0.85;
+}
+
+body[data-theme="langit"] {
+    --bg-primary: #e0f7fa; --bg-primary-rgb: 224, 247, 250; --bg-secondary-rgb: 207, 244, 247;
+    --text-primary: #006064; --text-secondary: #00838f; --border-color: #80deea;
+    --accent-color: #00bcd4; --accent-color-rgb: 0, 188, 212; --accent-text: #006064;
+    --danger-color: #f44336; --danger-color-rgb: 244, 67, 54; --global-opacity: 0.9;
+}
+
+body[data-theme="malam-kota"] {
+    --bg-primary: #1a1a2e; --bg-primary-rgb: 26, 26, 46; --bg-secondary-rgb: 30, 30, 48;
+    --text-primary: #e0e0e0; --text-secondary: #a0a0c0; --border-color: #555577;
+    --accent-color: #00ccff; --accent-color-rgb: 0, 204, 255; --accent-text: #1a1a2e;
+    --danger-color: #ff6666; --danger-color-rgb: 255, 102, 102; --global-opacity: 0.85;
+}
+
+body[data-theme="hutan-senyap"] {
+    --bg-primary: #21352d; --bg-primary-rgb: 33, 53, 45; --bg-secondary-rgb: 38, 60, 50;
+    --text-primary: #c9e2d9; --text-secondary: #8c9c93; --border-color: #516258;
+    --accent-color: #d0e08c; --accent-color-rgb: 208, 224, 140; --accent-text: #21352d;
+    --danger-color: #c04040; --danger-color-rgb: 192, 64, 64; --global-opacity: 0.9;
+}
+
+/* ------------------------------------------------------------------------- */
+/* --- 2. GLOBAL ANIMATIONS --- */
+/* ------------------------------------------------------------------------- */
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes subtleGradient {
+    0% { background-position: 0 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0 50%; }
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 0.8; }
+    50% { opacity: 0.2; }
+}
+
+/* Style Latar Belakang Animasi Utama */
+#animated-bg {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    z-index: var(--z-bg-animation); pointer-events: none;
+    transition: background .3s ease;
+    background-color: var(--bg-primary);
+}
+
+/* Style Animasi Spesifik */
+#animated-bg[data-animation="subtle-gradient"] {
+    background-image: radial-gradient(circle at top left, var(--bg-primary) 0%, transparent 60%), radial-gradient(circle at bottom right, rgba(var(--bg-secondary-rgb), 0.3) 0%, transparent 60%);
+    background-size: 200% 200%;
+    animation: subtleGradient 15s ease infinite;
+}
+
+.blinking-stars span {
+    display: block; width: 1px; height: 1px;
+    background: var(--text-secondary); position: absolute;
+    animation: blink 5s infinite; border-radius: 50%;
+}
+/* Catatan: Elemen HTML untuk .blinking-stars harus kamu tambahkan manual di dalam #animated-bg */

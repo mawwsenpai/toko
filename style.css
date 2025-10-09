@@ -1,0 +1,328 @@
+/* ========================================================================= */
+/* --- 1. IMPORT TEMA (WAJIB PALING ATAS) --- */
+/* ========================================================================= */
+@import url('theme.css');
+
+/* --- 2. GLOBAL RESET & BASE STYLES --- */
+/* ========================================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+* { 
+    box-sizing: border-box; 
+    margin: 0; 
+    padding: 0; 
+}
+
+/* Penerapan Font & Warna Global */
+html {
+    /* Font family akan diterapkan dari sini */
+    font-size: var(--font-size-base);
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    transition: var(--transition-smooth);
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+/* Font Fix untuk input/button */
+input, select, textarea, button, .sidebar-title { 
+    font-family: var(--font-main); 
+}
+
+.app-layout {
+    display: flex;
+    min-height: 100vh;
+    position: relative;
+}
+
+/* --- Glassmorphism & Transparansi Universal --- */
+.app-sidebar, .main-header, .game-item, .order-card, .setting-group, 
+.product-item, .payment-item {
+    background-color: rgba(var(--bg-secondary-rgb), var(--global-opacity));
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-color: var(--border-color);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: var(--padding-md);
+}
+
+.main-content-wrapper {
+    flex-grow: 1;
+    transition: filter var(--transition-smooth);
+    width: 100%;
+}
+
+/* --- Header & Tombol Kembali --- */
+.main-header {
+    height: var(--header-height);
+    border-bottom: var(--border-style);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 var(--padding-md);
+    position: sticky;
+    top: 0;
+    z-index: var(--z-content);
+}
+
+.main-header .logo-title {
+    font-size: calc(var(--font-size-base) * 1.5);
+    font-weight: 700;
+    color: var(--accent-color);
+    flex-grow: 1;
+    text-align: center;
+}
+
+.mobile-menu-toggle, .back-button {
+    background: none; border: none; color: var(--text-primary);
+    font-size: 1.5rem; cursor: pointer; transition: var(--transition-fast);
+    text-decoration: none; padding: 0 10px;
+}
+
+.mobile-menu-toggle:hover, .back-button:hover {
+    color: var(--accent-color);
+    transform: scale(1.1);
+}
+
+/* ========================================================================= */
+/* --- 3. SIDEBAR & NAVIGATION (NavSlide FIX) --- */
+/* ========================================================================= */
+
+.app-sidebar {
+    width: var(--sidebar-width); border-right: var(--border-style);
+    position: fixed; top: 0; left: 0; height: 100vh; z-index: var(--z-sidebar);
+    transform: translateX(-100%); transition: transform var(--transition-smooth);
+    box-shadow: var(--shadow-lg); display: flex; flex-direction: column;
+}
+
+.app-sidebar.is-open { transform: translateX(0); }
+
+.sidebar-open .main-content-wrapper { filter: blur(4px); pointer-events: none; }
+
+.sidebar-overlay {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(var(--bg-primary-rgb), .7); z-index: var(--z-overlay);
+    opacity: 0; visibility: hidden; transition: var(--transition-smooth);
+    backdrop-filter: blur(4px);
+}
+
+.sidebar-open .sidebar-overlay { opacity: 1; visibility: visible; }
+
+.sidebar-header { padding: var(--padding-md); border-bottom: var(--border-style); }
+.sidebar-title { font-size: calc(var(--font-size-base) * 1.5); font-weight: 700; color: var(--accent-color); margin: 0; }
+.sidebar-nav { padding: var(--padding-md); flex-grow: 1; overflow-y: auto; }
+.control-group-title { font-size: calc(var(--font-size-base) * .8); font-weight: 500; color: var(--text-secondary); margin-bottom: var(--padding-xs); text-transform: uppercase; letter-spacing: 1px; }
+
+.nav-list { list-style: none; padding: 0; }
+.nav-link {
+    display: flex; align-items: center; gap: 12px; padding: 12px 16px;
+    margin-bottom: 8px; border-radius: var(--border-radius-md); text-decoration: none;
+    color: var(--text-primary); transition: var(--transition-fast);
+}
+.nav-link:hover { background-color: rgba(var(--accent-color-rgb), 0.15); color: var(--accent-color); }
+.nav-link.active { background-color: var(--accent-color); color: var(--accent-text); font-weight: 600; }
+
+
+/* ========================================================================= */
+/* --- 4. MAIN.HTML (GAME GRID) --- */
+/* ========================================================================= */
+
+main { padding: var(--padding-lg) 0; }
+section {
+    padding: var(--padding-md); margin-bottom: var(--padding-md);
+    border-radius: var(--border-radius-lg); box-shadow: var(--shadow-md);
+    border: var(--border-style);
+}
+
+h2 {
+    font-size: 1.8rem; font-weight: 600; color: var(--text-primary);
+    text-align: center; margin-bottom: var(--padding-md); position: relative;
+    padding-bottom: 10px;
+}
+
+h2::after {
+    content: ''; display: block; width: 60px; height: 3px;
+    background-color: var(--accent-color); margin: 10px auto 0;
+    border-radius: 5px;
+}
+
+.game-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: var(--padding-md);
+}
+
+.game-item {
+    border: 2px solid var(--border-color); border-radius: var(--border-radius-md);
+    box-shadow: var(--shadow-sm); text-align: center; text-decoration: none;
+    color: var(--text-primary); transition: var(--transition-smooth);
+    overflow: hidden; position: relative;
+}
+
+.game-item:hover {
+    transform: translateY(-5px); border-color: var(--accent-color);
+    box-shadow: var(--shadow-lg), var(--border-glow);
+}
+
+.game-item img {
+    width: 100%; height: 160px; object-fit: cover;
+}
+
+.game-item h3 {
+    margin: var(--padding-xs) 0; padding: var(--padding-xs);
+    font-size: 1em; font-weight: 600; background-color: rgba(var(--bg-secondary-rgb), 0.9);
+}
+
+/* ========================================================================= */
+/* --- 5. ORDER.HTML (FORMULIR) --- */
+/* ========================================================================= */
+
+.order-card {
+    padding: var(--padding-lg); border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-lg); border: var(--border-style);
+    max-width: 700px; margin: var(--padding-md) auto;
+}
+
+.order-header img {
+    width: 100px; height: 100px; border-radius: var(--border-radius-sm);
+    object-fit: cover; border: 3px solid var(--accent-color); margin-bottom: 15px;
+}
+
+/* --- Product and Payment Grids --- */
+.product-grid, .payment-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(110px, 1fr)); gap: 15px; }
+.product-item, .payment-item {
+    background-color: var(--bg-primary); border: 2px solid var(--border-color);
+    border-radius: var(--border-radius-sm); padding: 15px 10px; cursor: pointer; transition: var(--transition-fast);
+}
+
+.product-item:hover, .payment-item:hover { border-color: var(--accent-color); box-shadow: var(--shadow-sm); }
+.product-item.selected, .payment-item.selected {
+    border-color: var(--accent-color); background-color: rgba(var(--accent-color-rgb), 0.1);
+    box-shadow: var(--border-glow);
+}
+
+/* --- Form Input & Button --- */
+form input, form select {
+    width: 100%; padding: 12px; background-color: var(--bg-primary); border: var(--border-style);
+    border-radius: var(--border-radius-sm); color: var(--text-primary); font-size: 1em; transition: var(--transition-fast);
+}
+form input:focus, form select:focus { border-color: var(--accent-color); outline: none; box-shadow: var(--border-glow); }
+#submit-button {
+    width: 100%; padding: 15px; background-color: var(--accent-color); color: var(--accent-text);
+    border: none; border-radius: var(--border-radius-md); cursor: pointer; font-weight: 700;
+    font-size: 1.1em; transition: var(--transition-fast); box-shadow: var(--accent-glow);
+}
+
+/* --- Status Message --- */
+#status-message, #info-message {
+    padding: 15px; border-radius: var(--border-radius-sm); margin-top: 20px; font-weight: 500;
+    text-align: center; display: none; background-color: rgba(var(--accent-color-rgb), 0.1);
+    border: 1px solid var(--accent-color); color: var(--text-primary);
+}
+
+
+/* ========================================================================= */
+/* --- 6. SETTING.HTML (PENGATURAN TAMPILAN) --- */
+/* ========================================================================= */
+
+.settings-panel { background: transparent; border: none; box-shadow: none; padding: 0; }
+
+.setting-group {
+    background-color: rgba(var(--bg-secondary-rgb), 0.7); border: var(--border-style);
+    border-radius: var(--border-radius-lg); padding: var(--padding-md);
+    margin-bottom: var(--padding-lg); box-shadow: var(--shadow-md);
+}
+
+.setting-group h2 { text-align: left; margin-bottom: var(--padding-xs); border-bottom: none; }
+.setting-group h2::after { display: none; }
+
+.setting-desc { font-size: 0.9em; color: var(--text-secondary); margin-bottom: var(--padding-sm); }
+
+.options-container { display: flex; flex-wrap: wrap; gap: var(--padding-xs); }
+
+.options-container.scrollable {
+    max-height: 200px; overflow-y: auto; padding-right: 10px;
+    border: var(--border-style); border-radius: var(--border-radius-md); padding: var(--padding-xs);
+    background-color: rgba(var(--bg-primary-rgb), 0.5);
+}
+
+.options-container label {
+    padding: var(--padding-xs) var(--padding-sm); border: var(--border-style);
+    border-radius: var(--border-radius-sm); cursor: pointer; transition: var(--transition-fast);
+    font-size: calc(var(--font-size-base) * .9); color: var(--text-primary);
+    background-color: var(--bg-primary);
+}
+
+.options-container label:has(input:checked) {
+    border-color: var(--accent-color); color: var(--accent-color);
+    box-shadow: 0 0 5px rgba(var(--accent-color-rgb), 0.5);
+}
+
+.options-container input[type=radio] { display: none; }
+
+
+/* ========================================================================= */
+/* --- 7. STATUS.HTML (CEK STATUS) --- */
+/* ========================================================================= */
+
+.status-card, .analysis-card {
+    border: var(--border-style);
+    border-radius: var(--border-radius-md);
+    padding: var(--padding-md);
+    margin-top: var(--padding-sm);
+    background-color: var(--bg-primary);
+    box-shadow: var(--shadow-sm);
+}
+
+.status-card p, .analysis-card p {
+    margin: 5px 0; font-size: 0.95em; color: var(--text-secondary);
+}
+
+.status-card strong { color: var(--text-primary); }
+
+/* Status Badges */
+.status-success {
+    color: var(--accent-text); background-color: #2ecc71; /* Hijau */
+    padding: 2px 8px; border-radius: var(--border-radius-sm); font-weight: 600;
+}
+
+.status-pending {
+    color: var(--accent-text); background-color: #f39c12; /* Kuning */
+    padding: 2px 8px; border-radius: var(--border-radius-sm); font-weight: 600;
+}
+
+.status-failed {
+    color: var(--accent-text); background-color: #e74c3c; /* Merah */
+    padding: 2px 8px; border-radius: var(--border-radius-sm); font-weight: 600;
+}
+
+/* ========================================================================= */
+/* --- 8. FOOTER & RESPONSIVE --- */
+/* ========================================================================= */
+
+footer {
+    text-align: center; padding: var(--padding-md) 0; background-color: var(--bg-primary);
+    color: var(--text-secondary); border-top: var(--border-style); font-size: 0.9em;
+}
+
+@media (min-width: 768px) {
+    .app-layout { padding-left: var(--sidebar-width); }
+    .app-sidebar { transform: translateX(0); }
+    .mobile-menu-toggle { display: none; }
+    .sidebar-open .main-content-wrapper { filter: none; pointer-events: auto; }
+}
+
+@media (max-width: 767px) {
+    .sidebar-open .main-content-wrapper { filter: blur(4px); pointer-events: none; }
+    .container { padding: var(--padding-sm); }
+    .game-grid { grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); }
+}
