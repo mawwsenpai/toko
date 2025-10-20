@@ -1,4 +1,4 @@
-const VERCEL_BASE_URL = "https://nama-aplikasi-kamu.vercel.app";
+const VERCEL_BASE_URL = "https://vochergames.vercel.app";
 
 /**
  * Fungsi pembantu untuk memanggil API Backend Vercel Functions
