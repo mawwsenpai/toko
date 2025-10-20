@@ -4,19 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Beli Diamond - VocherGames</title>
-    <script src="js/theme-loader.js"></script> 
-    <link rel="stylesheet" href="css/style.css">
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-</head>
+    <link rel="stylesheet" href="css/order.css"> </head>
 <body>
     
-    <div id="animated-bg" data-animation="none"></div>
-
     <div class="app-layout">
         <div class="main-content-wrapper">
+            
             <header class="main-header">
-                <a href="main.html" class="back-button"><i class="fas fa-arrow-left"></i></a>
+                <a href="home.html" class="back-button"><i class="fas fa-arrow-left"></i></a>
                 <div class="logo-title">Pembelian</div>
                 <div></div>
             </header>
@@ -24,58 +21,69 @@
             <main>
                 <div class="container">
                     <div class="order-card">
+                        
                         <section class="order-header">
                             <img id="game-image" src="" alt="Gambar Game">
-                            <h2 id="game-title"></h2>
-                            <p id="game-description"></p>
+                            <h2 id="game-title">Memuat...</h2>
+                            <p id="game-description">Memuat deskripsi produk dan instruksi top up.</p>
                         </section>
                         
                         <form id="top-up-form">
+                            
                             <section class="step-section">
-                                <h3>1. Pilih Jumlah Diamond</h3>
-                                <div class="product-grid" id="product-grid">
-                                    </div>
-                            </section>
-
-                            <section class="step-section">
-                                <h3>2. Masukkan ID Akun</h3>
+                                <h3>1. Masukkan ID Akun</h3>
+                                <p class="step-desc">Masukkan ID Game Anda dengan benar (termasuk ID Zone jika ada).</p>
+                                
                                 <label for="game-id">ID Game:</label>
                                 <input type="text" id="game-id" name="gameId" placeholder="Contoh: 12345678" required>
 
-                                <div id="zone-input-group" style="display: none;"> 
-                                    <label for="zone-id">ID Zone:</label>
-                                    <input type="text" id="zone-id" name="zoneId" placeholder="Contoh: 1234">
+                                <div id="zone-input-group" style="display: none;">    
+                                    <label for="zone-id">ID Zone (Contoh: 1234):</label>
+                                    <input type="text" id="zone-id" name="zoneId" placeholder="ID Zone" autocomplete="off">
+                                </div>
+                                <button type="button" id="check-id-button" class="action-button secondary-btn">Cek Nama</button>
+                                <p id="name-check-result" class="check-result-text"></p>
+                            </section>
+
+                            <section class="step-section">
+                                <h3>2. Pilih Nominal Top Up</h3>
+                                <div class="product-grid" id="product-grid">
+                                    <div class="loading-products">Memuat pilihan produk...</div>
                                 </div>
                             </section>
                             
                             <section class="step-section">
                                 <h3>3. Pilih Metode Pembayaran</h3>
                                 <div class="payment-grid" id="payment-grid">
-                                    </div>
+                                    <div class="loading-products">Memuat metode pembayaran...</div>
+                                </div>
                             </section>
-
+                            
                             <div class="final-buy">
-                                <div class="total-price" id="total-price">Total: Rp 0</div>
-                                <button type="submit" id="submit-button">Beli Sekarang</button>
+                                <div class="total-price-wrap">
+                                    <span class="label">Total Bayar:</span>
+                                    <span class="total-price" id="total-price">Rp 0</span>
+                                </div>
+                                <button type="submit" id="submit-button" disabled>Beli Sekarang</button>
                             </div>
                         </form>
                     </div>
+                    
+                    <section class="status-section">
+                        <div id="status-message" class="info-box"></div>
+                    </section>
                 </div>
             </main>
             
-            <section class="status-section">
-                <div id="status-message" style="display: none;"></div>
-            </section>
-
             <footer>
                 <div class="container">
-                    <p>&copy; 2025 VocherGames. Ditenagai oleh Heroku & Duitku.</p>
+                    <p>&copy; 2025 VocherGames. Transaksi Aman.</p>
                 </div>
             </footer>
         </div>
     </div>
     
-    <script src="js/api.js"></script>
+    <script src="js/config.js"></script> 
     <script src="js/order.js"></script>
 </body>
 </html>

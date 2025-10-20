@@ -4,33 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cek Status Order - VocherGames</title>
-    <script src="js/theme-loader.js"></script> 
-    <link rel="stylesheet" href="css/style.css">
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-</head>
+    <link rel="stylesheet" href="css/status.css"> </head>
 <body>
     
-    <div id="animated-bg" data-animation="none"></div>
-
     <div class="app-layout">
         <div class="main-content-wrapper">
+            
             <header class="main-header">
-                <a href="main.html" class="back-button"><i class="fas fa-arrow-left"></i></a>
+                <a href="home.html" class="back-button"><i class="fas fa-arrow-left"></i></a>
                 <div class="logo-title">Cek Status Order</div>
                 <div></div>
             </header>
 
             <main>
                 <div class="container">
-                    <div class="order-card">
+                    <div class="status-card">
                         <section class="form-section">
                             <h2>Lacak Pesanan Anda</h2>
-                            <p class="setting-desc">Masukkan ID Transaksi unik yang Anda dapatkan setelah pembayaran.</p>
+                            <p class="setting-desc">Masukkan **ID Transaksi** unik yang Anda dapatkan setelah *checkout* atau **Username** Anda.</p>
+                            
                             <form id="status-form">
-                              <label for="search-input">ID Transaksi / Nama Pembeli:</label>
-                              <input type="text" id="search-input" placeholder="Masukkan ID Transaksi atau Username Anda" required>
-                              <button type="submit" id="check-button">Cek Status</button>
-                              </form>
+                                <label for="search-input">ID Transaksi / Username:</label>
+                                <input type="text" id="search-input" placeholder="Contoh: VG-20251020-00123" required>
+                                
+                                <button type="submit" id="check-button" class="action-button primary-btn">Cek Status</button>
+                            </form>
                         </section>
 
                         <section class="result-section" id="result-section" style="display:none;">
@@ -39,21 +39,22 @@
                                 </div>
                         </section>
                         
-                        <section class="status-section">
-                            <div id="info-message" style="display:none;"></div>
+                        <section class="status-message-section">
+                            <div id="info-message" class="info-box"></div>
                         </section>
                     </div>
                 </div>
             </main>
-
+            
             <footer>
                 <div class="container">
-                    <p>&copy; 2025 VocherGames. All Rights Reserved.</p>
+                    <p>&copy; 2025 VocherGames. Ditenagai dengan Node.js & Heroku.</p>
                 </div>
             </footer>
         </div>
     </div>
-
+    
+    <script src="js/config.js"></script> 
     <script src="js/status.js"></script>
-    </body>
+</body>
 </html>
