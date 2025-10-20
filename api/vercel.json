@@ -1,8 +1,24 @@
 {
-    "rewrites": [
+    "build": {
+        "env": {
+            "NODE_ENV": "production"
+        }
+    },
+    "routes": [
+
         {
-            "source": "/",
-            "destination": "/home.html"
+            "src": "/api/(.*)",
+            "dest": "/api/$1"
+        },
+
+        {
+            "src": "/",
+            "dest": "/home.html"
+        },
+
+        {
+            "src": "/(.*)",
+            "dest": "/$1"
         }
     ]
 }
