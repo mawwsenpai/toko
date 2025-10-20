@@ -1,14 +1,8 @@
 {
-    "build": {
-        "env": {
-            "NODE_ENV": "production"
-        }
-    },
-    "rewrites": [
-
-        {
-            "source": "/(.*)",
-            "destination": "/public/$1"
-        }
-    ]
+  "rewrites": [
+    {
+      "source": "/",
+      "destination": "/home.html"
+    }
+  ]
 }
